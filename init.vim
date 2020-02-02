@@ -42,7 +42,6 @@ Plug 'simeji/winresizer'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Go
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mattn/vim-goimports'
 " CSV
 Plug 'mechatroner/rainbow_csv'
@@ -205,7 +204,7 @@ set statusline=\ %F%m%h%r%w\ %<%=[%{&fenc!=''?&fenc:&enc}][%{&ff}]%y\ [ROW=%l/%L
 set signcolumn=yes
 " スペースやタブなどの可視化設定
 set list
-set listchars=tab:»-,eol:↲,extends:»,precedes:«
+set listchars=eol:↲,extends:»,precedes:«
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 編集系
