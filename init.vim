@@ -204,7 +204,7 @@ set statusline=\ %F%m%h%r%w\ %<%=[%{&fenc!=''?&fenc:&enc}][%{&ff}]%y\ [ROW=%l/%L
 set signcolumn=yes
 " スペースやタブなどの可視化設定
 set list
-set listchars=eol:↲,extends:»,precedes:«
+set listchars=tab:»-,eol:↲,extends:»,precedes:«,space:.
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 編集系
