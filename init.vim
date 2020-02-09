@@ -34,9 +34,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'rhysd/git-messenger.vim'
-Plug 'liuchengxu/vim-clap'
 Plug 'simeji/winresizer'
+Plug 'junegunn/fzf', { 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
 
 " coc.nvim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -90,8 +90,38 @@ set mouse=a
 nnoremap j gj
 nnoremap k gk
 
-nnoremap <C-j> /
-nnoremap <C-k> ?
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
+vnoremap L $
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" complete
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" 補完表示時のEnterで改行をしない
+inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
+
+set completeopt=menuone,noinsert
+inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
+inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" complete
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" 補完表示時のEnterで改行をしない
+inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
+
+set completeopt=menuone,noinsert
+inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
+inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -284,12 +314,6 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -304,16 +328,9 @@ endfunction
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Remap for rename current word
-nmap ,r <Plug>(coc-rename)
-
-" Remap for format selected region
-" xmap <leader>f  <Plug>(coc-format-selected)
-" nmap <leader>f  <Plug>(coc-format-selected)
-
 " Remap for diagnostics current line.
-xmap <silent><leader>d  <Plug>(coc-diagnostic-info)
-nmap <silent><leader>d  <Plug>(coc-diagnostic-info)
+" xmap <silent><leader>d  <Plug>(coc-diagnostic-info)
+" nmap <silent><leader>d  <Plug>(coc-diagnostic-info)
 
 augroup cocgroup
   autocmd!
@@ -335,8 +352,26 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 " set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-" Using CocAction
-nnoremap <silent> ,a :<C-u>CocAction<CR>
+" coc.nvim remaps
+nnoremap <silent> <space><space> :<C-u>CocAction<CR>
+nmap +rn <Plug>(coc-rename)
+
+" vnoremap += <Plug>(coc-format-selected)
+nnoremap += :call CocAction('format')<CR>
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fzf.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+nnoremap +f :Files<CR>
+nnoremap +b :Buffers<CR>
+nnoremap +h :History<CR>
+nnoremap +g :Rg<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
@@ -347,7 +382,7 @@ let NERDTreeShowHidden=1
 " 無視設定
 let g:NERDTreeIgnore=['\.DS_Store$']
 
-nnoremap <silent>,t :NERDTreeToggle<CR>
+nnoremap <silent>++ :NERDTreeToggle<CR>
 
 " 起動時にNERDTreeを起動
 " ファイルを指定して起動した場合はNERDTreeを非表示にする設定
@@ -381,16 +416,6 @@ let g:go_highlight_function_calls = 1
 
 let dart_style_guide = 2
 let dart_format_on_save = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-clap
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" let g:clap_current_selection_sign={ 'text': '>>', 'texthl': "ClapMatches", "linehl": "ClapCurrentSelection"}
-
-nnoremap <silent>,f :<C-u>Clap files<CR>
-nnoremap <silent>,b :<C-u>Clap buffers<CR>
-nnoremap <silent>,h :<C-u>Clap history<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " :SyntaxInfo
