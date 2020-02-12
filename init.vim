@@ -90,11 +90,6 @@ set mouse=a
 nnoremap j gj
 nnoremap k gk
 
-nnoremap H ^
-nnoremap L $
-vnoremap H ^
-vnoremap L $
-
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -354,10 +349,10 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 " coc.nvim remaps
 nnoremap <silent> <space><space> :<C-u>CocAction<CR>
-nmap +rn <Plug>(coc-rename)
+nmap <C-k><C-r> <Plug>(coc-rename)
 
 " vnoremap += <Plug>(coc-format-selected)
-nnoremap += :call CocAction('format')<CR>
+nnoremap <C-k><C-d> :call CocAction('format')<CR>
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -368,10 +363,10 @@ nmap <silent> gr <Plug>(coc-references)
 " fzf.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-nnoremap +f :Files<CR>
-nnoremap +b :Buffers<CR>
-nnoremap +h :History<CR>
-nnoremap +g :Rg<CR>
+nnoremap <C-p><C-f> :Files<CR>
+nnoremap <C-p><C-b> :Buffers<CR>
+nnoremap <C-p><C-h> :History<CR>
+nnoremap <C-p><C-g> :Rg<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
@@ -382,7 +377,7 @@ let NERDTreeShowHidden=1
 " 無視設定
 let g:NERDTreeIgnore=['\.DS_Store$']
 
-nnoremap <silent>++ :NERDTreeToggle<CR>
+nnoremap <silent>+ :NERDTreeToggle<CR>
 
 " 起動時にNERDTreeを起動
 " ファイルを指定して起動した場合はNERDTreeを非表示にする設定
