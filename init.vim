@@ -61,6 +61,8 @@ Plug 'MTDL9/vim-log-highlighting'
 Plug 'cespare/vim-toml'
 " Dart
 Plug 'dart-lang/dart-vim-plugin'
+" Kotlin
+Plug 'udalov/kotlin-vim'
 
 call plug#end()
 
@@ -367,6 +369,7 @@ nnoremap <C-p><C-f> :Files<CR>
 nnoremap <C-p><C-b> :Buffers<CR>
 nnoremap <C-p><C-h> :History<CR>
 nnoremap <C-p><C-g> :Rg<CR>
+nnoremap <C-p><C-m> :Marks<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
