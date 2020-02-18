@@ -366,7 +366,7 @@ nmap <silent> gr <Plug>(coc-references)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 nnoremap <C-p><C-f> :Files<CR>
-nnoremap <C-p><C-b> :Buffers<CR>
+nnoremap <C-p><C-e> :Buffers<CR>
 nnoremap <C-p><C-h> :History<CR>
 nnoremap <C-p><C-g> :Rg<CR>
 nnoremap <C-p><C-m> :Marks<CR>
