@@ -30,13 +30,15 @@ set rtp+=~/source/vim/shirotelin
 call plug#begin(stdpath('data') . '/plugged')
 
 " Commons
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'simeji/winresizer'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
+Plug 'lambdalisue/gina.vim'
+Plug 'tpope/vim-fugitive'
 
 " coc.nvim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
