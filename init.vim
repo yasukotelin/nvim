@@ -63,6 +63,8 @@ Plug 'cespare/vim-toml'
 Plug 'dart-lang/dart-vim-plugin'
 " Kotlin
 Plug 'udalov/kotlin-vim'
+" Swift
+Plug 'keith/swift.vim'
 
 call plug#end()
 
