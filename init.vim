@@ -231,8 +231,8 @@ set statusline=\ %F%m%h%r%w\ %<%=[%{&fenc!=''?&fenc:&enc}][%{&ff}]%y\ [ROW=%l/%L
 " always show signcolumns
 set signcolumn=yes
 " スペースやタブなどの可視化設定
-set list
-set listchars=tab:»-,eol:↲,extends:»,precedes:«,space:.
+" set list
+" set listchars=tab:»-,eol:↲,extends:»,precedes:«,space:.
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 編集系
@@ -351,10 +351,8 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " coc.nvim remaps
-nnoremap <silent> <space><space> :<C-u>CocAction<CR>
+nnoremap <silent> <C-k><C-a> :<C-u>CocAction<CR>
 nmap <C-k><C-r> <Plug>(coc-rename)
-
-" vnoremap += <Plug>(coc-format-selected)
 nnoremap <C-k><C-d> :call CocAction('format')<CR>
 
 nmap <silent> gd <Plug>(coc-definition)
