@@ -37,7 +37,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'simeji/winresizer'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-fugitive'
+Plug 'lambdalisue/gina.vim'
 
 " coc.nvim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
