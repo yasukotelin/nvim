@@ -32,12 +32,12 @@ call plug#begin(stdpath('data') . '/plugged')
 " Commons
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
+Plug 'jremmen/vim-ripgrep'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'simeji/winresizer'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-fugitive'
 
 " coc.nvim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -103,39 +103,14 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " 補完表示時のEnterで改行をしない
-inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
+" inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
 
-set completeopt=menuone,noinsert
-inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
-inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
-
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" complete
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" 補完表示時のEnterで改行をしない
-inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
-
-set completeopt=menuone,noinsert
-inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
-inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
+" set completeopt=menuone,noinsert
+" inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
+" inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" complete
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" 補完表示時のEnterで改行をしない
-inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
-
-set completeopt=menuone,noinsert
-inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
-inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " encoding
@@ -186,9 +161,9 @@ set hidden
 " au BufEnter * execute ":lcd " . expand("%:p:h")
 
 " 前回のカーソル位置を復元
-augroup KeepLastPosition
-  au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
-augroup END
+" augroup KeepLastPosition
+"   au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
+" augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FileType

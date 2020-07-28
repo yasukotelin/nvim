@@ -3,8 +3,6 @@
   "diagnostic.infoSign": "I>",
   "diagnostic.warningSign": "W>",
   "diagnostic.hintSign": "H>",
-  "diagnostic.messageTarget": "echo",
-  "suggest.keepCompleteopt": true,
   "languageserver": {
     "golang": {
       "command": "gopls",
