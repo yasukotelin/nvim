@@ -22,6 +22,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set rtp+=~/source/vim/shirotelin
+set rtp+=~/source/vim/kurotelin
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-plug
@@ -30,7 +31,8 @@ set rtp+=~/source/vim/shirotelin
 call plug#begin(stdpath('data') . '/plugged')
 
 " Commons
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
+Plug 'lambdalisue/fern.vim'
 Plug 'tpope/vim-commentary'
 Plug 'jremmen/vim-ripgrep'
 Plug 'vim-jp/vimdoc-ja'
@@ -80,7 +82,7 @@ colorscheme shirotelin
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " カーソル設定を上書きしない（Terminalの設定に準拠する）
-set guicursor=
+" set guicursor=
 " CUIでもマウス操作を有効化
 set mouse=a
 
@@ -361,6 +363,15 @@ nnoremap <silent>+ :NERDTreeToggle<CR>
 " 起動時にNERDTreeを起動
 " ファイルを指定して起動した場合はNERDTreeを非表示にする設定
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fern.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" 隠しファイルを表示
+let g:fern#default_hidden=1
+" Mapping
+nnoremap <silent>+ :Fern . -drawer -toggle -keep -reveal=%<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-markdown
