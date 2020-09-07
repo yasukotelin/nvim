@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/Users/yasukotelin/source/rust/best_past_questions_100/2_b_105'
+let g:netrw_dirhist_2='/Users/yasukotelin/source/rust/best_past_questions_100/.git'
+let g:netrw_dirhist_1='/Users/yasukotelin/source/rust/best_past_questions_100/src'

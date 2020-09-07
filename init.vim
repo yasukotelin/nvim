@@ -23,6 +23,7 @@
 
 set rtp+=~/source/vim/shirotelin
 set rtp+=~/source/vim/kurotelin
+set rtp+=~/source/vim/notelight
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-plug
@@ -40,6 +41,9 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'simeji/winresizer'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
+
+" Colorscheme
+Plug 'morhetz/gruvbox'
 
 " coc.nvim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -75,7 +79,7 @@ call plug#end()
 " colorscheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-colorscheme shirotelin
+colorscheme gruvbox
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Cursor
@@ -190,9 +194,9 @@ set number
 " ルーラーを表示
 set ruler
 " カーソル行をハイライト
-" set cursorline
+set cursorline
 " カーソル行ハイライトを無効化
-set nocursorline
+" set nocursorline
 " 括弧入力時の対応する括弧を表示
 " set showmatch
 " 括弧入力時に対応する括弧への強調表示とジャンプをしない
