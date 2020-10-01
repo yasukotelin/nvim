@@ -42,8 +42,16 @@ Plug 'simeji/winresizer'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'rbong/vim-flog'
+
 " Colorscheme
+Plug 'dracula/vim'
 Plug 'morhetz/gruvbox'
+Plug 'jacoborus/tender.vim'
+Plug 'ntk148v/vim-horizon'
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
 " coc.nvim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -79,6 +87,7 @@ call plug#end()
 " colorscheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+set background=dark
 colorscheme gruvbox
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
