@@ -23,7 +23,6 @@
 
 set rtp+=~/source/vim/shirotelin
 set rtp+=~/source/vim/kurotelin
-set rtp+=~/source/vim/notelight
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-plug
@@ -32,15 +31,15 @@ set rtp+=~/source/vim/notelight
 call plug#begin(stdpath('data') . '/plugged')
 
 " Commons
-" Plug 'preservim/nerdtree'
 Plug 'lambdalisue/fern.vim'
 Plug 'tpope/vim-commentary'
 Plug 'jremmen/vim-ripgrep'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'simeji/winresizer'
-Plug 'junegunn/fzf', { 'do': './install --bin' }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'do': './install --bin' }
+" Plug 'junegunn/fzf.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -49,9 +48,6 @@ Plug 'rbong/vim-flog'
 " Colorscheme
 Plug 'dracula/vim'
 Plug 'morhetz/gruvbox'
-Plug 'jacoborus/tender.vim'
-Plug 'ntk148v/vim-horizon'
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
 " coc.nvim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -87,8 +83,13 @@ call plug#end()
 " colorscheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" dracula colorschemeが読み込まれる前に設定すると綺麗に色が出る
+" （macOS Terminal.App）
+" https://github.com/dracula/vim/issues/96
+let g:dracula_colorterm = 0
+
 set background=dark
-colorscheme gruvbox
+colorscheme dracula
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Cursor
@@ -203,9 +204,9 @@ set number
 " ルーラーを表示
 set ruler
 " カーソル行をハイライト
-set cursorline
+" set cursorline
 " カーソル行ハイライトを無効化
-" set nocursorline
+set nocursorline
 " 括弧入力時の対応する括弧を表示
 " set showmatch
 " 括弧入力時に対応する括弧への強調表示とジャンプをしない
@@ -356,11 +357,11 @@ nmap <silent> gr <Plug>(coc-references)
 " fzf.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-nnoremap <C-p><C-f> :Files<CR>
-nnoremap <C-p><C-e> :Buffers<CR>
-nnoremap <C-p><C-h> :History<CR>
-nnoremap <C-p><C-g> :Rg<CR>
-nnoremap <C-p><C-m> :Marks<CR>
+" nnoremap <C-p><C-f> :Files<CR>
+" nnoremap <C-p><C-e> :Buffers<CR>
+" nnoremap <C-p><C-h> :History<CR>
+" nnoremap <C-p><C-g> :Rg<CR>
+" nnoremap <C-p><C-m> :Marks<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
