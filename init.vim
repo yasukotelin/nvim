@@ -441,11 +441,9 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " fzf.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-nnoremap <C-p>f :Files<CR>
-nnoremap <C-p>e :Buffers<CR>
-nnoremap <C-p>h :History<CR>
-nnoremap <C-p>g :Rg<CR>
-nnoremap <C-p>m :Marks<CR>
+nnoremap ,f :Files<CR>
+nnoremap ,e :Buffers<CR>
+nnoremap ,m :Marks<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
