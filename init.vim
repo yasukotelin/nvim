@@ -38,6 +38,7 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'simeji/winresizer'
+Plug 'mattn/vim-sonictemplate'
 
 " fzf.vim
 Plug 'junegunn/fzf', { 'do': './install --bin' }
@@ -58,10 +59,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/vim-goimports'
 " CSV
 Plug 'mechatroner/rainbow_csv'
-" Markdown
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 " HTML
 Plug 'mattn/emmet-vim'
 " JavaScript
@@ -78,6 +75,19 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'udalov/kotlin-vim'
 " Swift
 Plug 'keith/swift.vim'
+
+" PlantUML
+Plug 'aklt/plantuml-syntax'
+" PlantUMLのPreviewやエクスポートなど
+" 別途依存があるので注意(https://github.com/weirongxu/plantuml-previewer.vim)
+Plug 'tyru/open-browser.vim'
+Plug 'weirongxu/plantuml-previewer.vim'
+
+" Markdown
+Plug 'plasticboy/vim-markdown'
+" Markdownのリアルタイムプレビューなど
+Plug 'godlygeek/tabular'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 call plug#end()
 
