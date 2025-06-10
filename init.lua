@@ -24,6 +24,22 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   -- プラグインをここに追加
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- {"3rd/image.nvim", opts = {}}, -- Optional image support in preview window: See `# Preview Mode` for more information
+    },
+    lazy = false, -- neo-tree will lazily load itself
+    ---@module "neo-tree"
+    ---@type neotree.Config?
+    opts = {
+      -- fill any relevant options here
+    },
+  },
 })
 
 -- カラースキーム
@@ -36,6 +52,9 @@ vim.opt.mouse = "a"
 -- キーマップ: 折り返し時に表示行単位での移動
 vim.keymap.set("n", "j", "gj", { noremap = true })
 vim.keymap.set("n", "k", "gk", { noremap = true })
+
+-- Neo-tree キーマップ
+vim.keymap.set("n", "<F2>", ":Neotree toggle<CR>", { noremap = true, silent = true })
 
 -- 補完設定
 vim.opt.wildmenu = true
@@ -59,7 +78,7 @@ vim.opt.cursorline = false
 vim.opt.showmatch = false
 vim.opt.wrap = false
 vim.opt.cmdheight = 2
-vim.opt.statusline = " %F%m%h%r%w %<%=[%{&fenc!=''?&fenc:&enc}][%{&ff}]%y [ROW=%l/%L][COL=%02v]"
+vim.cmd("set statusline=\\ %F%m%h%r%w\\ %<%=[%{&fenc!=''?&fenc:&enc}][%{&ff}]%y\\ [ROW=%l/%L][COL=%02v]")
 vim.opt.signcolumn = "auto"
 
 -- 編集設定
